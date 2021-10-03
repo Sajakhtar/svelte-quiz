@@ -1,10 +1,7 @@
-*Psst — looking for a more complete solution? Check out [SvelteKit](https://kit.svelte.dev), the official framework for building web applications of all sizes, with a beautiful development experience and flexible filesystem-based routing.*
+# Svelte Quiz app
 
-*Looking for a shareable component template instead? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+Courtesy of the [Svelte For Beginners]((https://leveluptutorials.com/tutorials/svelte-for-beginners/introduction)) on [Level Up Tutorials](https://leveluptutorials.com/home) by Scott Tolinski.
 
----
-
-# svelte app
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
