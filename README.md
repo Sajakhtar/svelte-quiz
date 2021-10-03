@@ -1,6 +1,6 @@
 # Svelte Quiz app
 
-Courtesy of the [Svelte For Beginners]((https://leveluptutorials.com/tutorials/svelte-for-beginners/introduction)) on [Level Up Tutorials](https://leveluptutorials.com/home) by Scott Tolinski.
+Courtesy of the [Svelte For Beginners](https://leveluptutorials.com/tutorials/svelte-for-beginners/introduction) on [Level Up Tutorials](https://leveluptutorials.com/home) by Scott Tolinski.
 
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
