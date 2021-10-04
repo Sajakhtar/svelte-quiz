@@ -4,5 +4,4 @@
 
 <main>
   <Quiz quizName="New Quiz" />
-  <Quiz/>
 </main>
