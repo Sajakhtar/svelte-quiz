@@ -1,16 +1,22 @@
 <script>
-  export let quizName = "Svelte Quiz";
-  // let title = "";
-  let a = 0;
-  let b = 0;
+  let result = "";
+  const correctAnswer = "B";
+
+  const pickAnswer = (answer) => {
+    // console.log(`Answered ${answer}`);
+    if(answer === correctAnswer) {
+      return (result = 'Correct!');
+    }
+
+    result = "Wrong answer"
+  }
+
 </script>
 
 <div>
-  <h2>{quizName}</h2>
-  <!-- <h4>{title}</h4> -->
-  <!-- <input bind:value={title} type="text" > -->
-  <h3>Calculate:</h3>
-  <input bind:value={a} type="number">
-  <input bind:value={b} type="number">
-  <p>The sum is {a + b}</p>
+  <h4>{result}</h4>
+  <button on:click={() => pickAnswer('A')}>Answer A</button>
+  <button on:click={() => pickAnswer('B')}>Answer B</button>
+  <button on:click={() => pickAnswer('C')}>Answer C</button>
+  <button on:click={() => pickAnswer('D')}>Answer D</button>
 </div>
