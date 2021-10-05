@@ -11,8 +11,14 @@
 
     result = "Wrong answer"
   }
-
 </script>
+
+<style>
+  h4 {
+    /* color: purple; */
+  }
+</style>
+
 
 <div>
   {#if result}
