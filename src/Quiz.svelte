@@ -1,5 +1,5 @@
 <script>
-  let result = "";
+  let result;
   const correctAnswer = "B";
 
   const pickAnswer = (answer) => {
@@ -14,7 +14,11 @@
 </script>
 
 <div>
-  <h4>{result}</h4>
+  {#if result}
+    <h4>{result}</h4>
+  {:else}
+    <h4>Please pick an answer</h4>
+  {/if}
   <button on:click={() => pickAnswer('A')}>Answer A</button>
   <button on:click={() => pickAnswer('B')}>Answer B</button>
   <button on:click={() => pickAnswer('C')}>Answer C</button>
