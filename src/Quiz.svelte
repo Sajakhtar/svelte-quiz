@@ -1,6 +1,7 @@
 <script>
   let result;
   const correctAnswer = "B";
+  let answers = ['A', 'B', 'C', 'D'];
 
   const pickAnswer = (answer) => {
     // console.log(`Answered ${answer}`);
@@ -19,8 +20,9 @@
   {:else}
     <h4>Please pick an answer</h4>
   {/if}
-  <button on:click={() => pickAnswer('A')}>Answer A</button>
-  <button on:click={() => pickAnswer('B')}>Answer B</button>
-  <button on:click={() => pickAnswer('C')}>Answer C</button>
-  <button on:click={() => pickAnswer('D')}>Answer D</button>
+
+  {#each answers as answer}
+    <button on:click={() => pickAnswer(answer)}>Answer {answer}</button>
+  {/each}
+
 </div>
