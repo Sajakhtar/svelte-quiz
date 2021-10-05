@@ -2,6 +2,8 @@
 
 Courtesy of the [Svelte For Beginners](https://leveluptutorials.com/tutorials/svelte-for-beginners/introduction) on [Level Up Tutorials](https://leveluptutorials.com/home) by Scott Tolinski.
 
+The quiz data is source from the the Open Trivia Database [API](https://opentdb.com/api_config.php)
+
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
