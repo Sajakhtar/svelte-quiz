@@ -10,7 +10,7 @@
 
 
 <main>
-  <h1>Hello World</h1>
-  <h4>H4 in app</h4>
+  <h1>Svelte Quiz</h1>
+  <!-- <h4>H4 in app</h4> -->
   <Quiz quizName="New Quiz" />
 </main>
