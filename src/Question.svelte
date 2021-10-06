@@ -1,5 +1,7 @@
 <script>
   export let question;
+  export let nextQuestion;
+  export let incrementScore;
 
   let isCorrect;
   let isAnswered = false;
@@ -28,6 +30,9 @@
   const checkAnswer = (correct) => {
     isAnswered = true;
     isCorrect = correct;
+    if(correct) {
+      incrementScore();
+    }
   }
 </script>
 
@@ -36,13 +41,13 @@
 <h3>{@html question.question}</h3>
 
 {#if isAnswered}
-  <h4>
+  <h5>
     {#if isCorrect}
       You got it right!
     {:else}
       Wrong answer!
     {/if}
-  </h4>
+  </h5>
 {/if}
 
 {#each answers as answer}
@@ -50,3 +55,9 @@
     {@html answer.answer}
   </button>
 {/each}
+
+{#if isAnswered}
+  <div>
+    <button on:click={nextQuestion}>Next</button>
+  </div>
+{/if}
