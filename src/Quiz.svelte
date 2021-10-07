@@ -27,6 +27,15 @@
   const incrementScore = () => {
     score += 1;
   }
+
+  //  reactive statement
+  $: if(score > 7) {
+    alert('You Won!')
+    resetQuiz();
+  }
+
+  // reactive declaration
+  $: questionNumber = activeQuestion + 1;
 </script>
 
 <style>
@@ -40,7 +49,7 @@
   <button on:click={resetQuiz}>Start new quiz</button>
 
   <h3>Score: {score}</h3>
-  <h4>Question #{activeQuestion + 1}</h4>
+  <h4>Question #{questionNumber}</h4>
 
   {#await quiz}
     Loading Questions ...
