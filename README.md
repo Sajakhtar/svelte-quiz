@@ -4,6 +4,7 @@ Courtesy of the [Svelte For Beginners](https://leveluptutorials.com/tutorials/sv
 
 The quiz data is source from the the Open Trivia Database [API](https://opentdb.com/api_config.php)
 
+Instructions for the [Svelte Processor](https://github.com/sveltejs/svelte-preprocess) package used to add SCSS (SASS).
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
