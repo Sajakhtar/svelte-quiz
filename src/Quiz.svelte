@@ -85,7 +85,7 @@
 
 
 {#if isModalOpen}
-  <Modal>
+  <Modal on:close={resetQuiz}>
     <h2>You Won!</h2>
     <p>Congratulations</p>
     <button on:click={resetQuiz}>Start over</button>
