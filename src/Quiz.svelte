@@ -2,8 +2,11 @@
   import { fade, blur, fly, slide, scale } from 'svelte/transition';
   import { onMount, beforeUpdate, afterUpdate, onDestroy } from 'svelte';
   import Question from './Question.svelte';
+  import Modal from './Modal.svelte';
+
   let activeQuestion = 0;
   let score = 0;
+  let isModalOpen = false;
 
   const getQuiz = async () => {
     const res = await fetch('https://opentdb.com/api.php?amount=10&category=18&type=multiple');
@@ -32,6 +35,7 @@
   }
 
   const resetQuiz = () => {
+    isModalOpen = false;
     score = 0;
     activeQuestion = 0;
     quiz = getQuiz();
@@ -42,9 +46,8 @@
   }
 
   //  reactive statement
-  $: if(score > 7) {
-    alert('You Won!')
-    resetQuiz();
+  $: if(score > 1) {
+    isModalOpen = true;
   }
 
   // reactive declaration
@@ -79,3 +82,12 @@
   {/await}
 
 </div>
+
+
+{#if isModalOpen}
+  <Modal>
+    <h2>You Won!</h2>
+    <p>Congratulations</p>
+    <button on:click={resetQuiz}>Start over</button>
+  </Modal>
+{/if}
