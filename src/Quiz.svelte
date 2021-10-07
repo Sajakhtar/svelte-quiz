@@ -1,5 +1,6 @@
 <script>
   import { fade, blur, fly, slide, scale } from 'svelte/transition';
+  import { onMount, beforeUpdate, afterUpdate, onDestroy } from 'svelte';
   import Question from './Question.svelte';
   let activeQuestion = 0;
   let score = 0;
@@ -13,6 +14,18 @@
   }
 
   let quiz = getQuiz();
+
+  onMount(() => {
+    console.log('mounted');
+  });
+
+  beforeUpdate(() => {
+    console.log('before update');
+  });
+
+  afterUpdate(() => {
+    console.log('after update');
+  });
 
   const nextQuestion = () => {
     activeQuestion += 1;
