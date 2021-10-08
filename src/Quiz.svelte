@@ -48,7 +48,7 @@
   // }
 
   //  reactive statement
-  $: if($score > 1) {
+  $: if($score > 7) {
     isModalOpen = true;
   }
 
@@ -60,6 +60,10 @@
   .fade-wrapper {
     position: absolute;
   }
+
+  .container {
+    min-height: 500px;
+  }
 </style>
 
 <div>
@@ -69,19 +73,21 @@
   <h3>Score: {$score}</h3>
   <h4>Question #{questionNumber}</h4>
 
-  {#await quiz}
-    Loading Questions ...
-  {:then data}
+  <div class="container">
+    {#await quiz}
+      Loading Questions ...
+    {:then data}
 
-    {#each data.results as question, index}
-      {#if index === activeQuestion}
-        <div in:fly={{ x: 100}} out:fly={{ x: -100}} class="fade-wrapper">
-          <Question {nextQuestion} {question} />
-        </div>
-      {/if}
-    {/each}
+      {#each data.results as question, index}
+        {#if index === activeQuestion}
+          <div in:fly={{ x: 100}} out:fly={{ x: -100}} class="fade-wrapper">
+            <Question {nextQuestion} {question} />
+          </div>
+        {/if}
+      {/each}
 
-  {/await}
+    {/await}
+  </div>
 
 </div>
 

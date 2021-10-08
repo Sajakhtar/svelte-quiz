@@ -18,6 +18,8 @@
       background: white;
       padding: 20px;
       border-radius: 15px;
+      width: 500px;
+      margin: 0 auto;
     }
   }
 
