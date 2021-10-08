@@ -1,7 +1,8 @@
 <script>
+  import { score } from './store.js';
   export let question;
   export let nextQuestion;
-  export let incrementScore;
+  // export let incrementScore;
 
   let isCorrect;
   let isAnswered = false;
@@ -31,7 +32,8 @@
     isAnswered = true;
     isCorrect = correct;
     if(correct) {
-      incrementScore();
+      // incrementScore();
+      score.update((val) => val + 1);
     }
   }
 </script>

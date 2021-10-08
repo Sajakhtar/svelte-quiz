@@ -3,9 +3,10 @@
   import { onMount, beforeUpdate, afterUpdate, onDestroy } from 'svelte';
   import Question from './Question.svelte';
   import Modal from './Modal.svelte';
+  import { score } from './store.js';
 
   let activeQuestion = 0;
-  let score = 0;
+  // let score = 0;
   let isModalOpen = false;
 
   const getQuiz = async () => {
@@ -36,17 +37,18 @@
 
   const resetQuiz = () => {
     isModalOpen = false;
-    score = 0;
+    // score = 0;
+    score.set(0);
     activeQuestion = 0;
     quiz = getQuiz();
   }
 
-  const incrementScore = () => {
-    score += 1;
-  }
+  // const incrementScore = () => {
+  //   score += 1;
+  // }
 
   //  reactive statement
-  $: if(score > 1) {
+  $: if($score > 1) {
     isModalOpen = true;
   }
 
@@ -64,7 +66,7 @@
 
   <button on:click|once={resetQuiz}>Start new quiz</button>
 
-  <h3>Score: {score}</h3>
+  <h3>Score: {$score}</h3>
   <h4>Question #{questionNumber}</h4>
 
   {#await quiz}
@@ -74,7 +76,7 @@
     {#each data.results as question, index}
       {#if index === activeQuestion}
         <div in:fly={{ x: 100}} out:fly={{ x: -100}} class="fade-wrapper">
-          <Question {incrementScore} {nextQuestion} {question} />
+          <Question {nextQuestion} {question} />
         </div>
       {/if}
     {/each}
